@@ -1,0 +1,89 @@
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Meu site legal</title>
+  <style>
+    body {
+      background-color: darkslategray;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #content {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border-radius: 15px;
+      color: black;
+      padding: 15px;
+      margin: 20px;
+    }
+
+    .card:hover {
+      background-color: antiquewhite;
+      height: 250px;
+      width: 250px;
+      cursor: pointer;
+    }
+
+    input { 
+      font-size: 20px;
+      border-radius: 15px;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    button { 
+      font-size: 20px;
+      border-radius: 15px;
+      padding: 10px;
+      background-color: blueviolet;
+      color: white;
+      border: none;
+    }
+
+    button:hover{
+      background-color: blue;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1 id="heading"></h1>
+  
+  <input id="tarefa" type="text" placeholder="Insira sua tarefa"></input>
+  <button onclick="addToList()">Adicionar na lista</button>
+  <button onclick="disparaAlerta()">Alguma coisa</button>
+
+  <div id="content"></div>
+  <script>
+    let titulo = document.getElementById('heading')  // <h1 id="heading"></h1>
+    let conteudo = document.getElementById('content') // <div id="content"></div>
+    let contador = 0
+    
+    titulo.innerText = 'Minha lista de tarefas 📑' // <h1 id="heading">Alibaba</h1>
+
+    let addToList = () => {
+      let input = document.getElementById('tarefa')
+      if (!input.value) return
+      let card = document.createElement('div')
+      card.innerText = input.value
+      card.classList.add('card')
+      card.onclick = () => card.remove()
+      conteudo.appendChild(card)
+    }
+
+    let disparaAlerta = () => {
+      contador++
+      alert(`O botão foi clicado ${contador} vezes!`)
+    }
+
+  </script>
+</body>
+</html>
