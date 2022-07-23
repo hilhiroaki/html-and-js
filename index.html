@@ -69,16 +69,25 @@
     
     titulo.innerText = 'Minha lista de tarefas 📑' // <h1 id="heading">Alibaba</h1>
 
+   // let addToList = () => {
+   //   let input = document.getElementById('tarefa')
+   //   if (!input.value) return
+   //   let card = document.createElement('div')
+   //    card.innerText = input.value
+   //    card.classList.add('card')
+   //    card.onclick = () => card.remove()
+   //     conteudo.appendChild(card)
+   //   }
+
     let addToList = () => {
       let input = document.getElementById('tarefa')
       if (!input.value) return
-      let card = document.createElement('div')
-      card.innerText = input.value
-      card.classList.add('card')
-      card.onclick = () => card.remove()
-      conteudo.appendChild(card)
+      let image = document.createElement('img')
+      image.src = input.value
+      image.classList.add('img')
+      image.onclick = () => image.remove()
+      conteudo.appendChild(image)
     }
-
     let disparaAlerta = () => {
       contador++
       alert(`O botão foi clicado ${contador} vezes!`)
