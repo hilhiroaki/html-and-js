@@ -82,9 +82,11 @@
     let addToList = () => {
       let input = document.getElementById('tarefa')
       if (!input.value) return
+      console.log(input)
+      console.log(input.value)
       let image = document.createElement('img')
       image.src = input.value
-      image.classList.add('img')
+      image.classList.add('card')
       image.onclick = () => image.remove()
       conteudo.appendChild(image)
     }
